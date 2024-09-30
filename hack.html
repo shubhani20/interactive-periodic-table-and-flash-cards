@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Periodic Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text color */
+        }
+        .table {
+            display: grid;
+            grid-template-columns: repeat(18, 50px);
+            gap: 5px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .element {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 50px;
+            position: relative;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            color: #000;
+            transition: background-color 0.3s;
+        }
+        .element:hover {
+            background-color: #d9e9f9;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 10;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .element:hover .tooltip {
+            display: block;
+        }
+        /* Color categories */
+        .alkali { background-color: lightblue; color: black; } /* Alkali metals */
+        .alkaline-earth { background-color: lightpink; color: black; } /* Alkaline earth metals */
+        .transition { background-color: red; color: white; } /* Transition metals */
+        .post-transition { background-color: lightgreen; color: black; } /* Post-transition metals */
+        .metalloids { background-color: orange; color: black; } /* Metalloids */
+        .halogens { background-color: lightyellow; color: black; } /* Halogens */
+        .noble-gases { background-color: lightgray; color: black; } /* Noble gases */
+        .lanthanides { background-color: lightcoral; color: white; } /* Lanthanides */
+        .actinides { background-color: lightseagreen; color: white; } /* Actinides */
+    </style>
+</head>
+<body>
+
+<div class="table">
+    <!-- Row 1 -->
+    <div class="element noble-gases">H<div class="tooltip">Hydrogen: Essential for hydration.</div></div>
+    <div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element noble-gases">He<div class="tooltip">Helium: Inert gas, no health benefit.</div></div>
+
+    <!-- Row 2 -->
+    <div class="element alkali">Li<div class="tooltip">Lithium: Used in some medications.</div></div>
+    <div class="element alkaline-earth">Be<div class="tooltip">Beryllium: Toxic, no dietary benefit.</div></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element metalloids">B<div class="tooltip">Boron: Supports bone health.</div></div>
+    <div class="element metalloids">C<div class="tooltip">Carbon: Fundamental to all living things.</div></div>
+    <div class="element metalloids">N<div class="tooltip">Nitrogen: Essential for amino acids.</div></div>
+    <div class="element metalloids">O<div class="tooltip">Oxygen: Vital for respiration.</div></div>
+    <div class="element halogens">F<div class="tooltip">Fluorine: Strengthens teeth.</div></div>
+    <div class="element noble-gases">Ne<div class="tooltip">Neon: Inert gas, no health benefit.</div></div>
+    <div class="element alkali">Na<div class="tooltip">Sodium: Important for nerve function.</div></div>
+    <div class="element alkaline-earth">Mg<div class="tooltip">Magnesium: Supports muscle and nerve function.</div></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div><div class="element"></div>
+    <div class="element post-transition">Al<div class="tooltip">Aluminum: No known dietary benefit.</div></div>
+    <div class="element metalloids">Si<div class="tooltip">Silicon: Supports bone health.</div></div>
+    <div class="element post-transition">P<div class="tooltip">Phosphorus: Important for bones and teeth.</div></div>
+    <div class="element post-transition">S<div class="tooltip">Sulfur: Found in amino acids.</div></div>
+    <div class="element halogens">Cl<div class="tooltip">Chlorine: Important for digestion.</div></div>
+    <div class="element noble-gases">Ar<div class="tooltip">Argon: Inert gas, no health benefit.</div></div>
+    <div class="element alkali">K<div class="tooltip">Potassium: Important for muscle function.</div></div>
+    <div class="element alkaline-earth">Ca<div class="tooltip">Calcium: Essential for bones and teeth.</div></div>
+    <div class="element transition">Sc<div class="tooltip">Scandium: No known dietary benefit.</div></div>
+    <div class="element transition">Ti<div class="tooltip">Titanium: No known dietary benefit.</div></div>
+    <div class="element transition">V<div class="tooltip">Vanadium: May help with bone health.</div></div>
+    <div class="element transition">Cr<div class="tooltip">Chromium: Helps regulate blood sugar.</div></div>
+    <div class="element transition">Mn<div class="tooltip">Manganese: Important for metabolism.</div></div>
+    <div class="element transition">Fe<div class="tooltip">Iron: Essential for blood production.</div></div>
+    <div class="element transition">Co<div class="tooltip">Cobalt: Part of vitamin B12.</div></div>
+    <div class="element transition">Ni<div class="tooltip">Nickel: No known dietary benefit.</div></div>
+    <div class="element transition">Cu<div class="tooltip">Copper: Important for red blood cells.</div></div>
+    <div class="element post-transition">Zn<div class="tooltip">Zinc: Supports immune function.</div></div>
+    <div class="element post-transition">Ga<div class="tooltip">Gallium: No known dietary benefit.</div></div>
+    <div class="element post-transition">Ge<div class="tooltip">Germanium: No known dietary benefit.</div></div>
+    <div class="element metalloids">As<div class="tooltip">Arsenic: Toxic, no dietary benefit.</div></div>
+    <div class="element metalloids">Se<div class="tooltip">Selenium: Important antioxidant.</div></div>
+    <div class="element halogens">Br<div class="tooltip">Bromine: No known dietary benefit.</div></div>
+    <div class="element noble-gases">Kr<div class="tooltip">Krypton: Inert gas, no health benefit.</div></div>
+    <div class="element alkali">Rb<div class="tooltip">Rubidium: No known dietary benefit.</div></div>
+    <div class="element alkaline-earth">Sr<div class="tooltip">Strontium: May support bone health.</div></div>
+    <div class="element transition">Y<div class="tooltip">Yttrium: No known dietary benefit.</div></div>
+    <div class="element transition">Zr<div class="tooltip">Zirconium: No known dietary benefit.</div></div>
+    <div class="element transition">Nb<div class="tooltip">Niobium: No known dietary benefit.</div></div>
+    <div class="element transition">Mo<div class="tooltip">Molybdenum: Important for enzyme function.</div></div>
+    <div class="element transition">Tc<div class="tooltip">Technetium: No known dietary benefit.</div></div>
+    <div class="element transition">Ru<div class="tooltip">Ruthenium: No known dietary benefit.</div></div>
+    <div class="element transition">Rh<div class="tooltip">Rhodium: No known dietary benefit.</div></div>
+    <div class="element transition">Pd<div class="tooltip">Palladium: No known dietary benefit.</div></div>
+    <div class="element transition">Ag<div class="tooltip">Silver: Antibacterial properties.</div></div>
+    <div class="element post-transition">Cd<div class="tooltip">Cadmium: Toxic, no dietary benefit.</div></div>
+    <div class="element post-transition">In<div class="tooltip">Indium: No known dietary benefit.</div></div>
+    <div class="element post-transition">Sn<div class="tooltip">Tin: Used in some food containers.</div></div>
+    <div class="element post-transition">Sb<div class="tooltip">Antimony: No known dietary benefit.</div></div>
+    <div class="element post-transition">Te<div class="tooltip">Tellurium: No known dietary benefit.</div></div>
+    <div class="element halogens">I<div class="tooltip">Iodine: Essential for thyroid function.</div></div>
+    <div class="element noble-gases">Xe<div class="tooltip">Xenon: Inert gas, no health benefit.</div></div>
+    <div class="element alkali">Cs<div class="tooltip">Cesium: No known dietary benefit.</div></div>
+    <div class="element alkaline-earth">Ba<div class="tooltip">Barium: No known dietary benefit.</div></div>
+    <div class="element lanthanides">La<div class="tooltip">Lanthanum: No known dietary benefit.</div></div>
+    <div class="element lanthanides">Ce<div class="tooltip">Cerium: No known dietary benefit.</div></div>
+    <div class="element lanthanides">Pr<div class="tooltip">Praseodymium: No known dietary benefit.</div></div>
+    <div class="element lanthanides">Nd<div class="tooltip">Neodymium: No known dietary benefit.</div></div>
+    <div class="element lanthanides">Pm<div class="tooltip">Promethium: No known dietary benefit.</div></div>
+    <div class="element lanthanides">Sm<div class="tooltip">Samarium: No known dietary benefit.</div></div>
+    <!--remaining elements, beacuse we couldn't finish -->
+
+</div>
+</body>
+</html>
